@@ -1,0 +1,54 @@
+-- DML -> Data Manipulation Language
+
+-- CRUD
+-- CREATE, READ, UPDATE, DELETE
+
+-- READ
+-- SELECT (ATTRIBUT) FROM (TABLE)
+-- * -> SEMUANYA
+-- WHERE
+
+-- TAMPILIN STAFF YANG GAJINYA DI ATAS 5JT
+SELECT * FROM MsStaff
+WHERE StaffSalary > 8000000
+
+
+-- CREATE
+-- INSERT INTO [TABLE] VALUES (A,B,C)
+-- STAFF ID : ST019
+-- STAFF NAME : Helen
+-- Staff Email : helen@helen.com
+-- Staff Salary : 7000000
+-- Staff Dob : 1999-02-02
+
+INSERT INTO MsStaff VALUES
+('ST020', 'Luwis', 'luwis@luwis.com', 7500000, '2000-02-02'),
+('ST021', 'Cindy', 'cindy@cindy.com', 7500000, '2000-02-03')
+
+
+-- UPDATE
+-- UPDATE [TABLE] SET COLUMN = NILAIBARU
+
+UPDATE MsStaff 
+SET StaffSalary = 8000000
+WHERE StaffID = 'ST001'
+
+-- NAIKIN GAJI SEBESAR 1000000 KEPADA SEMUA STAFF YANG MELAYANI DI BULAN 8
+
+-- += -= *= /= %= =     ASSIGNMENT OPERATOR
+UPDATE MsStaff
+SET StaffSalary += 1000000
+FROM MsStaff s, TransactionHeader h
+WHERE s.StaffID = h.StaffId AND MONTH(h.TransactionDate) = 8 
+
+-- DELETE
+-- DELETE FROM [TABLE] WHERE [CONDITION]
+
+SELECT * FROM MsStaff
+
+-- HAPUS BERDASARKAN KONDISI
+DELETE FROM MsStaff
+WHERE StaffID = 'ST021'
+
+-- HAPUS SEMUA DATA
+DELETE FROM MsStaff
