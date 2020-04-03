@@ -48,3 +48,13 @@ Contoh:
     WHERE mc.ManufacturerId = mm.ManufacturerId
     GROUP BY ManufacturerName
   ```
+  2. Kita ingin menampilkan jumlah barang yang dibeli per transaksi
+  ```
+    SELECT
+        TransactionId,
+        SUM(Quantity) AS 'Quantity'
+    FROM TransactionDetail
+    GROUP BY TransactionId
+  ```
+
+  **NB:** jika kita ingin menggunakan **Aggregate Function**, kita harus memastikan kalau kita sudah meng **GROUP BY** attribute yang tidak digunakan dalam Aggregate Function. Tapi tidak semua kasus begini.
