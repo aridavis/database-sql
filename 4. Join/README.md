@@ -1,3 +1,5 @@
+# JOIN & UNION
+
 # JOIN
 Seperti namanya sendiri, Join artinya bergabung. Dalam database, Join ini berguna untuk menggabungan 2 tabel atau lebih berdasarkan KEY tertentu (Biasanya adalah Foreign Key di suatu tabel dan Primary Key di tabel lainnya, tapi bisa juga yang lain).
 
