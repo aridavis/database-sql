@@ -33,6 +33,7 @@ Untuk melakukan Join, kita harus menggunakan syntax yaitu **JOIN** dengan format
 **Join** terdiri dari beberapa jenis:
   ### Inner Join
   ![Inner Join](images/InnerJoin.jpg)
+  
   Berdasarkan gambar di atas, kita mendapati bahwa Inner Join hanya akan menampilkan data yang benar-benar terhubung. Maksudnya adalah Key dari TableA terdapat di TableB juga.
   Ex:
   ```
@@ -49,6 +50,7 @@ Untuk melakukan Join, kita harus menggunakan syntax yaitu **JOIN** dengan format
 
   ### Left Join
   ![Left Join](images/LeftJoin.jpg)
+
   **Left Join** sendiri, akan menampilakn semua data yang ada di sebelah kiri, dan jikalau Key yang dicocokkan ada di tabel sebelah kanan, maka data tabel sebelah kanan akan ditampilkan, jika tidak maka akan dijadikan NULL.
   Ex:
   ```
@@ -68,6 +70,7 @@ Untuk melakukan Join, kita harus menggunakan syntax yaitu **JOIN** dengan format
 
   ### Right Join
   ![Right Join](images/RightJoin.jpg)
+
   **Right Join** adalah kebalikan dari Left Join, jika tabel di sebelah kiri tidak mengandung key yang terdapat di tabel kedua, maka tabel sebelah kiri akan dikosongkan. Seandainya tabel sebelah kiri memiliki data yang mengandung key sebelah tabel kanan sebanyak lebih dari sama dengan 1, maka semua data itu akan ditampilkan.
   Ex:
   ```
@@ -86,6 +89,7 @@ Untuk melakukan Join, kita harus menggunakan syntax yaitu **JOIN** dengan format
 
   ### Full Outer Join
   ![Full Outer Join](images/FullOuterJoin.jpg)
+
   **Full Outer Join** adalah gabungan dari Left Join dan Right Join. Dia akan menampilkan Left Join terlebih dahulu kemudian di**UNION** Right Join dengan kondisi, data tersebut belum ada di Left Join Sebelumnya
   Ex:
   ```
