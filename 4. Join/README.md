@@ -33,7 +33,7 @@ Untuk melakukan Join, kita harus menggunakan syntax yaitu **JOIN** dengan format
 **Join** terdiri dari beberapa jenis:
   ### Inner Join
   ![Inner Join](images/InnerJoin.jpg)
-  
+
   Berdasarkan gambar di atas, kita mendapati bahwa Inner Join hanya akan menampilkan data yang benar-benar terhubung. Maksudnya adalah Key dari TableA terdapat di TableB juga.
   Ex:
   ```
@@ -90,7 +90,7 @@ Untuk melakukan Join, kita harus menggunakan syntax yaitu **JOIN** dengan format
   ### Full Outer Join
   ![Full Outer Join](images/FullOuterJoin.jpg)
 
-  **Full Outer Join** adalah gabungan dari Left Join dan Right Join. Dia akan menampilkan Left Join terlebih dahulu kemudian di**UNION** Right Join dengan kondisi, data tersebut belum ada di Left Join Sebelumnya
+  **Full Outer Join** adalah gabungan dari Left Join dan Right Join. Dia akan menampilkan Left Join terlebih dahulu kemudian di **UNION** Right Join dengan kondisi, data tersebut belum ada di Left Join Sebelumnya
   Ex:
   ```
     SELECT * 
@@ -107,3 +107,59 @@ Untuk melakukan Join, kita harus menggunakan syntax yaitu **JOIN** dengan format
   | 10311 | 2 | 1996-09-21 | 2 | Ana Trujillo Emparedados y helados | Ana Trujillo | Mexico |
   | NULL | NULL | NULL | 1 | Alfreds Futterkiste | Maria Anders | Germany |
   | NULL | NULL | NULL | 3 | Antonio Moreno Taquería | Antonio Moreno | Mexico |
+
+
+# UNION
+Union adalah menggabungan suatu tabel dengan tabel lainnya dengan syarat **memiliki tipe attribut dan jumlah attribut yang sama**. Berbeda dengan JOIN, kalau JOIN menggabungkan 2 tabel yang berbeda, sedangkan UNION 2 tabel yang sama
+
+## Syntax UNION
+```
+  TableA
+  (JENIS UNION)
+  TableB
+```
+
+## Jenis UNION
+  UNION terbagi menjadi 2 jenis:
+  ### UNION
+  UNION aja, akan menggabungkan 2 tabel tersebut tapi secara DISTINCT (tidak ada duplikat)
+  Ex:
+  ```
+    SELECT * 
+    FROM 
+        Order
+    WHERE OrderID = 10308
+    UNION
+    SELECT *
+    FROM 
+        Order
+  ```
+  Tabel pertama memiliki data yang hanya memiliki OrderID 10308. Karena UNION memiliki sifat DISTINCT, maka outputnya adalah
+  | OrderID | CustomerID | OrderDate |
+  | ------- | ---------- | --------- |
+  | 10308 | 2 | 1996-09-18 |
+  | 10309 | 37 | 1996-09-19 |
+  | 10310 | 77 | 1996-09-20 |
+  | 10311 | 2 | 1996-09-21 |
+
+  ## UNION ALL
+  UNION ALL akan menggabungkan semua datanya dan memperbolehkan adanya duplikat
+  ```
+    SELECT * 
+    FROM 
+        Order
+    WHERE OrderID = 10308
+    UNION ALL
+    SELECT *
+    FROM 
+        Order
+  ```
+  Output:
+  | OrderID | CustomerID | OrderDate |
+  | ------- | ---------- | --------- |
+  | 10308 | 2 | 1996-09-18 |
+  | 10308 | 2 | 1996-09-18 |
+  | 10309 | 37 | 1996-09-19 |
+  | 10310 | 77 | 1996-09-20 |
+  | 10311 | 2 | 1996-09-21 |
+
