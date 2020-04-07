@@ -54,6 +54,7 @@ Subquery bisa digunakan untuk beberapa hal (yang sudah pernah saya dapati):
 
 Setelah mendapatkan bayangan tentang subquery, sekarang kita harus mengetahui keempat syntax ini:
   - **ANY / SOME**
+  
     Syntax **ANY** dan **SOME** sama-sama memiliki arti **OR**. Kita lihat contoh kasus saja kalau kurang mengerti
     #### Tampilkan semua data kamera yang dibeli di semua transaksi
     ```
@@ -70,6 +71,7 @@ Setelah mendapatkan bayangan tentang subquery, sekarang kita harus mengetahui ke
       WHERE CameraId = CA004 OR CameraId = CA005 OR ...
     ```
   - **ALL**
+
     **ALL** memiliki arti **AND**, kita pakai contoh di atas
     ```
       SELECT *
@@ -85,6 +87,7 @@ Setelah mendapatkan bayangan tentang subquery, sekarang kita harus mengetahui ke
       WHERE CameraId = CA004 AND CameraId = CA005 AND ...
     ```
   - **IN**
+
     **IN** sama seperti **ANY** hanya saja cara menggunakannya sedikit berbeda. Kalau **ANY** menggunakan operator =,>,<,> kalau **IN** tidak menggunakan operator tersebut, melainkan langsung menggunakan syntaxnya.
     ```
       SELECT *
@@ -94,6 +97,7 @@ Setelah mendapatkan bayangan tentang subquery, sekarang kita harus mengetahui ke
       )
     ```
   - **EXISTS**
+
     **EXISTS** sendiri adalah sebuah syntax untuk mengecek apakah subquery di dalamnya ada isinya atau tidak, kalau ada maka nilainya True, dan sebaliknya
     ```
       SELECT *
