@@ -119,10 +119,10 @@ Contoh, kita akan mengeprint angka 1 sampai 10, tapi kita akan mengskip angka 6 
         BEGIN
             IF @i = 6
                 BEGIN
-				    SELECT @i = @i + 1
+                    SELECT @i = @i + 1
                     CONTINUE
                 END
-			IF @i = 8
+           IF @i = 8
                 BEGIN
                     BREAK	
                 END
