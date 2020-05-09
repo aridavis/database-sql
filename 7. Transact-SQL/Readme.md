@@ -117,16 +117,15 @@ Contoh, kita akan mengeprint angka 1 sampai 10, tapi kita akan mengskip angka 6 
     SELECT @i = 1
     WHILE @i <= 10
         BEGIN
-
             IF @i = 6
                 BEGIN
-					SELECT @i = @i + 1
+				    SELECT @i = @i + 1
                     CONTINUE
                 END
 			IF @i = 8
-				BEGIN
-					BREAK	
-				END
+                BEGIN
+                    BREAK	
+                END
             PRINT @i
             SELECT @i = @i + 1
         END
