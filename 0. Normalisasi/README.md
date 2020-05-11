@@ -36,29 +36,35 @@ Normalisasi memiliki beberapa tujuan untuk:
 
 # Tahap Normalisasi
 ```
-    Sebenarnya untuk melakukan normalisasi, kita harus tahu semua sistem, tapi supaya lebih simplenya, kita akan gunakan struk saja. Jadi ada beberapa attribut yang kita tambahkan.
+    Sebenarnya untuk melakukan normalisasi, kita harus tahu semua sistem, tapi supaya lebih simplenya, 
+    kita akan gunakan struk saja. Jadi ada beberapa attribut yang kita tambahkan.
     Contoh yang akan kita gunakan adalah contoh transaksi IndoMerat
 ```
 
-![receipt]('images/receipt.png)
+![receipt](images/receipt.png)
 
 ## UNF
 Dalam tahap ini kita ambil attribut secara keseluruhan, jadi apa yang ada di dalam sistem tersebut, kita catat bulat-bulat.
 Contoh:
-![UNF]('images/UNF.png')
+
+![UNF](images/UNF.png)
 
 ## 1NF
 Dalam tahap ini, kita akan menghapus semua data-data yang kurang penting seperti calculation, auto-numbering. Serta kita juga memisahkan Transaction tersebut menjadi TransactionHeader dan TransactionDetail. Kita juga harus menentukan Primary Key dan Foreign Keynya
 Contoh:
-![1NF]('images/1NF.png')
+
+![1NF](images/1NF.png)
 
 ## 2NF
 Dalam tahap ini, kita akan memisahkan data-data yang seharusnya bisa diganti dengan Composite Key saja, contoh di sini adalah ProductName dan ProductPrice bisa kita pisahkan dari tabel TransactionDetail
-![2NF]('images/2NF.png')
+
+![2NF](images/2NF.png)
 
 ## 3NF
 Dalam tahap ini, kita akan memisahkan data-data yang Transitive Dependent. Di sini, kita katakan Staff dan Customer punya attribut-attribut pada umumnya ya, seperti nama, DOB, dsb.
-![3NF-Unfinished]('images/3NF-Unfinished.png')
 
-Tidak cukup hanya normalisasi itu, mungkin saja Staff di IndoMerat mempunyai banyak Role, jadi alangkah baiknya kalau kita normalisasi Role dari Staff 
-![3NF]('images/3NF')
+![3NF-Unfinished](images/3NF-Unfinished.png)
+
+Tidak cukup hanya normalisasi itu, mungkin saja Staff di IndoMerat mempunyai banyak Role, jadi alangkah baiknya kalau kita normalisasi Role dari Staff
+
+![3NF](images/3NF)
