@@ -67,4 +67,4 @@ Dalam tahap ini, kita akan memisahkan data-data yang Transitive Dependent. Di si
 
 Tidak cukup hanya normalisasi itu, mungkin saja Staff di IndoMerat mempunyai banyak Role, jadi alangkah baiknya kalau kita normalisasi Role dari Staff
 
-![3NF](images/3NF)
+![3NF](images/3NF.png)
