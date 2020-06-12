@@ -6,9 +6,11 @@ Cursor adalah objek database yang berguna untuk memanipulasi data dalam satu set
 
 ### Perbedaan dengan SELECT
 CURSOR
+
 ![Cursor](images/cursor.png)
 
 SELECT
+
 ![SELECT](images/select.png)
 
 ## Jenis-Jenis Cursor
@@ -73,6 +75,7 @@ Kita akan mengambil semua data kamera dengan menggunakan CURSOR, maka syntaxnya 
 
 Pada awalnya kita memiliki sebuah cursor bernama *nama_cursor*, kemudian kita **OPEN** yang berarti kita akan mengambil data *nama_cursor*. 
 Selanjutnya kita akan melakukan **FETCH NEXT FROM nama_cursor** yang berarti kita mengambil data, dan kita harus fetch sekali terlebih dahulu. Ketika kita FETCH pertama kali, maka cursor akan menampilkan row pertama dari *select_statement*
+**CLOSE nama_cursor** berarti kita menutup cursornya, ibarat kita fopen dan fclose di C.
 **WHILE @@FETCH_STATUS = X** berguna sebagai kondisi loopingan kita. 
 | @@FETCH_STATUS | arti |
 |-|-|
@@ -80,7 +83,6 @@ Selanjutnya kita akan melakukan **FETCH NEXT FROM nama_cursor** yang berarti kit
 | -1 | FETCH statement gagal atau FETCH sudah mencapai akhir |
 | -2 | baris yang di FETCH kosong |
 | -9 | cursor tidak melakukan operasi FETCH |
-**CLOSE nama_cursor** berarti kita menutup cursornya, ibarat kita fopen dan fclose di C.
 
 Kalau kita ingin mengambil data ke 5, maka syntaxnya adalah
 ```
