@@ -3,8 +3,10 @@
 ## Pengertian TRIGGER
 
 Misalkan kita mempunyai teman, terus kita panggil nama orang tuanya..
-    Ari: "Oii Suhannn!!!"
-    XX : "Oii YYYYY (nama orang tua)"
+
+Ari: "Oii Suhannn!!!"
+
+XX : "Oii YYYYY (nama orang tua)"
 
 Ketika Ari memanggil si XX dengan nama orang tuanya, maka si XX otomatis keTRIGGER memanggil nama orang tua saya. Jadi TRIGGER adalah sesuatu yang akan dilakukan ketika suatu event terjadi (simplenya begitu).
 
