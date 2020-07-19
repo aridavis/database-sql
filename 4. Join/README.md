@@ -7,9 +7,9 @@ Seperti namanya sendiri, Join artinya bergabung. Dalam database, Join ini bergun
 Untuk melakukan Join, kita harus menggunakan syntax yaitu **JOIN** dengan format:
 ```
     ...
-    
+
     FROM TableA (JENIS JOIN) TableB ON TableA.Key = TableB.key
-    
+
     ...
 ```
 
@@ -39,7 +39,7 @@ Untuk melakukan Join, kita harus menggunakan syntax yaitu **JOIN** dengan format
   Berdasarkan gambar di atas, kita mendapati bahwa Inner Join hanya akan menampilkan data yang benar-benar terhubung. Maksudnya adalah Key dari TableA terdapat di TableB juga.
   Ex:
   ```
-    SELECT * 
+    SELECT *
     FROM
         Order o
         JOIN Customer c on c.CustomerID = o.CustomerID
@@ -53,15 +53,15 @@ Untuk melakukan Join, kita harus menggunakan syntax yaitu **JOIN** dengan format
   ### Left Join
   ![Left Join](images/LeftJoin.jpg)
 
-  **Left Join** sendiri, akan menampilakn semua data yang ada di sebelah kiri, dan jikalau Key yang dicocokkan ada di tabel sebelah kanan, maka data tabel sebelah kanan akan ditampilkan, jika tidak maka akan dijadikan NULL.
+  **Left Join** sendiri, akan menampilkan semua data yang ada di sebelah kiri, dan jikalau Key yang dicocokkan ada di tabel sebelah kanan, maka data tabel sebelah kanan akan ditampilkan, jika tidak maka akan dijadikan NULL.
   Ex:
   ```
-    SELECT * 
+    SELECT *
     FROM
         Order o
         LEFT JOIN Customer c on c.CustomerID = o.CustomerID
   ```
-  Tabel sebelah kiri adalah **Order** dan sebelah kanan adalah **Customer**, karena CustomedID 33 dan 77 tidak terdapat di tabel **Customer**, maka data Customer pada Order tersebut akan dijadikan NULL.
+  Tabel sebelah kiri adalah **Order** dan sebelah kanan adalah **Customer**, karena CustomerID 33 dan 77 tidak terdapat di tabel **Customer**, maka data Customer pada Order tersebut akan dijadikan NULL.
   | OrderID | CustomerID | OrderDate | CustomerID | CustomerName | ContactName | Country |
   | ------- | ---------- | --------- | ---------- | ------------ | ----------- | ------- |
   | 10308 | 2 | 1996-09-18 | 2 | Ana Trujillo Emparedados y helados | Ana Trujillo | Mexico |
@@ -76,7 +76,7 @@ Untuk melakukan Join, kita harus menggunakan syntax yaitu **JOIN** dengan format
   **Right Join** adalah kebalikan dari Left Join, jika tabel di sebelah kiri tidak mengandung key yang terdapat di tabel kedua, maka tabel sebelah kiri akan dikosongkan. Seandainya tabel sebelah kiri memiliki data yang mengandung key sebelah tabel kanan sebanyak lebih dari sama dengan 1, maka semua data itu akan ditampilkan.
   Ex:
   ```
-    SELECT * 
+    SELECT *
     FROM
         Order o
         RIGHT JOIN Customer c on c.CustomerID = o.CustomerID
@@ -95,10 +95,10 @@ Untuk melakukan Join, kita harus menggunakan syntax yaitu **JOIN** dengan format
   **Full Outer Join** adalah gabungan dari Left Join dan Right Join. Dia akan menampilkan Left Join terlebih dahulu kemudian di **UNION** Right Join dengan kondisi, data tersebut belum ada di Left Join Sebelumnya
   Ex:
   ```
-    SELECT * 
+    SELECT *
     FROM
         Order o
-        RIGHT JOIN Customer c on c.CustomerID = o.CustomerID
+        FULL JOIN Customer c on c.CustomerID = o.CustomerID
   ```
   Output:
   | OrderID | CustomerID | OrderDate | CustomerID | CustomerName | ContactName | Country |
@@ -127,13 +127,13 @@ Union adalah menggabungan suatu tabel dengan tabel lainnya dengan syarat **memil
   UNION aja, akan menggabungkan 2 tabel tersebut tapi secara DISTINCT (tidak ada duplikat)
   Ex:
   ```
-    SELECT * 
-    FROM 
+    SELECT *
+    FROM
         Order
     WHERE OrderID = 10308
     UNION
     SELECT *
-    FROM 
+    FROM
         Order
   ```
   Tabel pertama memiliki data yang hanya memiliki OrderID 10308. Karena UNION memiliki sifat DISTINCT, maka outputnya adalah
@@ -147,13 +147,13 @@ Union adalah menggabungan suatu tabel dengan tabel lainnya dengan syarat **memil
   ## UNION ALL
   UNION ALL akan menggabungkan semua datanya dan memperbolehkan adanya duplikat
   ```
-    SELECT * 
-    FROM 
+    SELECT *
+    FROM
         Order
     WHERE OrderID = 10308
     UNION ALL
     SELECT *
-    FROM 
+    FROM
         Order
   ```
   Output:
@@ -164,4 +164,3 @@ Union adalah menggabungan suatu tabel dengan tabel lainnya dengan syarat **memil
   | 10309 | 37 | 1996-09-19 |
   | 10310 | 77 | 1996-09-20 |
   | 10311 | 2 | 1996-09-21 |
-
