@@ -66,7 +66,7 @@ Urutan dari Value harus sesuai dengan urutan ketika kita membuat atribut tabel t
 
 ```
     PERHATIAN!
-    Berikut urutan yang harus diperhatikan ketika kita mau READ data
+    Berikut urutan yang harus diperhatikan ketika kita mau READ data:
 
     SELECT
     FROM
