@@ -42,9 +42,9 @@ Contoh:
 Sekarang kita akan membuat sebuah database yang bernama TokoCamera (yang sesuai dengan repository ini)
 
 ```
-    CREATE DATABASE computer_science_b
+    CREATE DATABASE TokoCamera
     GO
-    USE computer_science_b
+    USE TokoCamera
     GO
 ```
 
