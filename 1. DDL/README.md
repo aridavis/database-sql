@@ -83,7 +83,7 @@ Mengganti tabel maksudnya adalah mengupdate kerangka dari si tabel, bisa digunak
 Untuk update tabel, sedikit lebih banyak dan bervarian seperti list di atas, tapi pada dasarnya adalah
 
 ```
-    ALTER TABLE nama_tabel OPERASI_YANG_AKAN_DIJALANKAN
+    ALTER TABLE table_name operation_to_be_executed
 ```
 
 ### Menghapus Tabel
